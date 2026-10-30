@@ -1,0 +1,43 @@
+===== ONLINE RETAIL DSA ASSIGNMENT =====
+Total orders loaded: 50000
+
+TASK 1: SEARCHING
+Linear Search found: 51000
+Binary Search found: 51000
+Linear Search time: 2.770 ms
+Binary Search time: 0.029 ms
+Note: Binary Search needs sorted IDs.
+
+TASK 2: SORTING AMOUNTS (DESCENDING)
+Bubble Sort - first three passes:
+Pass 1: 450 700 300 550 200 900 120 100 
+Pass 2: 700 450 550 300 900 200 120 100 
+Pass 3: 700 550 450 900 300 200 120 100 
+Merge Sort - result after each merge level:
+Merge width 1: 450 120 700 300 550 200 900 100 
+Merge width 2: 700 450 300 120 900 550 200 100 
+Merge width 4: 900 700 550 450 300 200 120 100 
+Bubble Sort: 89.445 ms
+Merge Sort: 3.819 ms
+Built-in sort: 5.311 ms
+Top five amounts: 2499.87 2499.83 2499.66 2499.27 2498.78 
+
+TASK 3: DUPLICATE ORDERS
+Duplicate orders found: 201
+Rule: Same customer, same amount and same minute.
+
+TASK 4: STACK AND QUEUE
+Custom Stack undo: Edit order O101: amount changed to 700
+Built-in Stack undo: Edit order O101
+Custom Queue dispatch: Order 1, Order 2, Order 3
+Built-in Queue dispatch: Order 1, Order 2, Order 3
+
+TASK 5: REFUND COIN CHANGE
+Refund amount: 6
+Denominations: [1, 3, 4]
+Greedy minimum coin count: 3
+Dynamic Programming minimum coin count: 2
+Greedy gives 4 + 1 + 1 (3 coins).
+DP gives 3 + 3 (2 coins).
+
+===== PROGRAM COMPLETED =====
