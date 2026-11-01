@@ -1,0 +1,131 @@
+
+public class Main {
+
+    // 1. Hub Codes
+    static void hubCodes() {
+        String[] hubs = {
+            "HUB10", "HUB20", "HUB30", "HUB40"
+        };
+
+        System.out.println("\n1. HUB CODES");
+
+        for (String hub : hubs) {
+            System.out.println(hub);
+        }
+
+        String search = "HUB20";
+        boolean found = false;
+
+        for (String hub : hubs) {
+            if (hub.equals(search)) {
+                found = true;
+                break;
+            }
+        }
+
+        System.out.println(found ? "Hub Found" : "Hub Not Found");
+    }
+
+    // 2. Duplicate Parcel Scans
+    static void duplicateScans() {
+        String[] parcels = {
+            "P101", "P102", "P103", "P101", "P104"
+        };
+
+        String[] hubs = {
+            "HUB1", "HUB2", "HUB1", "HUB1", "HUB3"
+        };
+
+        System.out.println("\n2. DUPLICATE PARCEL SCANS");
+
+        for (int i = 0; i < parcels.length; i++) {
+            for (int j = i + 1; j < parcels.length; j++) {
+                if (parcels[i].equals(parcels[j]) &&
+                    hubs[i].equals(hubs[j])) {
+
+                    System.out.println("Duplicate Scan: " + parcels[i]);
+                }
+            }
+        }
+    }
+
+    // 3. Delivery Routes
+    static void deliveryRoutes() {
+        String[] routes = {
+            "HUB1 -> HUB2",
+            "HUB2 -> HUB3",
+            "HUB3 -> HUB4",
+            "HUB4 -> HUB5"
+        };
+
+        System.out.println("\n3. DELIVERY ROUTES");
+
+        for (String route : routes) {
+            System.out.println(route);
+        }
+    }
+
+    // 4. Highest Average 4-Hour Window
+    static void highestAverage() {
+        int[] parcels = {100, 200, 300, 400, 250, 350, 150};
+
+        int max = 0;
+        int start = 0;
+
+        for (int i = 0; i <= parcels.length - 4; i++) {
+            int sum = 0;
+
+            for (int j = i; j < i + 4; j++) {
+                sum += parcels[j];
+            }
+
+            if (sum > max) {
+                max = sum;
+                start = i;
+            }
+        }
+
+        double average = max / 4.0;
+
+        System.out.println("\n4. HIGHEST AVERAGE");
+        System.out.println("Average: " + average);
+        System.out.println("Starting Hour: " + start);
+    }
+
+    // 5. Palindrome Route
+    static void palindromeRoute() {
+        String[] route = {
+            "HUB1", "HUB2", "HUB3", "HUB2", "HUB1"
+        };
+
+        int left = 0;
+        int right = route.length - 1;
+        boolean palindrome = true;
+
+        while (left < right) {
+            if (!route[left].equalsIgnoreCase(route[right])) {
+                palindrome = false;
+                break;
+            }
+
+            left++;
+            right--;
+        }
+
+        System.out.println("\n5. PALINDROME ROUTE");
+
+        if (palindrome) {
+            System.out.println("Route is Palindrome");
+        } else {
+            System.out.println("Route is Not Palindrome");
+        }
+    }
+
+    public static void main(String[] args) {
+        hubCodes();
+        duplicateScans();
+        deliveryRoutes();
+        highestAverage();
+        palindromeRoute();
+    }
+}
