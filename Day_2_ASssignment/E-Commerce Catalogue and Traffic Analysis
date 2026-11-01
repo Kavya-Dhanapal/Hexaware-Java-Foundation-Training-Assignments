@@ -1,0 +1,112 @@
+
+public class Main {
+
+    // 1. Product Categories
+    static void productCategories() {
+        String[] products = {
+            "Electronics", "Clothing", "Books",
+            "Furniture", "Sports"
+        };
+
+        System.out.println("\n1. PRODUCT CATEGORIES");
+
+        for (String p : products) {
+            System.out.println(p);
+        }
+
+        String search = "Books";
+        boolean found = false;
+
+        for (String p : products) {
+            if (p.equals(search)) {
+                found = true;
+                break;
+            }
+        }
+
+        System.out.println(found ? "Product Found" : "Product Not Found");
+    }
+
+    // 2. Find Duplicate SKUs
+    static void duplicateSKU() {
+        String[] sku = {
+            "SKU101", "SKU102", "SKU103", "SKU101", "SKU104"
+        };
+
+        System.out.println("\n2. DUPLICATE SKUs");
+
+        for (int i = 0; i < sku.length; i++) {
+            for (int j = i + 1; j < sku.length; j++) {
+                if (sku[i].equals(sku[j])) {
+                    System.out.println("Duplicate: " + sku[i]);
+                }
+            }
+        }
+    }
+
+    // 3. Microservice Deployment Order
+    static void deploymentOrder() {
+        String[] services = {
+            "Inventory", "Pricing", "Cart",
+            "Payment", "Notification"
+        };
+
+        System.out.println("\n3. DEPLOYMENT ORDER");
+
+        for (String service : services) {
+            System.out.println(service);
+        }
+    }
+
+    // 4. Busiest 3-Hour Window
+    static void busiestWindow() {
+        int[] requests = {
+            100, 200, 150, 300, 250, 400,
+            350, 200, 100, 150, 300, 250
+        };
+
+        int max = 0;
+        int start = 0;
+
+        for (int i = 0; i <= requests.length - 3; i++) {
+            int sum = 0;
+
+            for (int j = i; j < i + 3; j++) {
+                sum += requests[j];
+            }
+
+            if (sum > max) {
+                max = sum;
+                start = i;
+            }
+        }
+
+        System.out.println("\n4. BUSIEST 3-HOUR WINDOW");
+        System.out.println("Maximum Requests: " + max);
+        System.out.println("Starting Hour: " + start);
+    }
+
+    // 5. Find Pairs
+    static void findPairs() {
+        int[] prices = {10, 20, 30, 40, 50, 60};
+        int target = 70;
+
+        System.out.println("\n5. GIFT CARD PAIRS");
+
+        for (int i = 0; i < prices.length; i++) {
+            for (int j = i + 1; j < prices.length; j++) {
+                if (prices[i] + prices[j] == target) {
+                    System.out.println(prices[i] + " + " + prices[j]);
+                }
+            }
+        }
+    }
+
+    public static void main(String[] args) {
+        productCategories();
+        duplicateSKU();
+        deploymentOrder();
+        busiestWindow();
+        findPairs();
+    }
+}
